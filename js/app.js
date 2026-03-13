@@ -1,77 +1,77 @@
-// const editBtn = document.getElementById("editBtn")
-// const nameDisplay = document.getElementById("nameDisplay")
-// const nameInput = document.getElementById("nameInput")
-// const comma = document.getElementById("comma")
+const editBtn = document.getElementById("editBtn")
+const nameDisplay = document.getElementById("nameDisplay")
+const nameInput = document.getElementById("nameInput")
+const comma = document.getElementById("comma")
 
-// let editing = false
-
-
-// // Load name from Local Storage
-// const savedName = localStorage.getItem("username")
-
-// if(savedName){
-//   nameDisplay.textContent = savedName
-//   comma.textContent = ","
-// }
+let editing = false
 
 
-// // Toggle edit mode
-// editBtn.addEventListener("click", () => {
+// Load name from Local Storage
+const savedName = localStorage.getItem("username")
 
-//   if(!editing){
-
-//     nameInput.style.display = "inline"
-//     nameDisplay.style.display = "none"
-
-//     nameInput.value = nameDisplay.textContent
-//     nameInput.focus()
-
-//     editing = true
-
-//   }else{
-
-//     nameInput.style.display = "none"
-//     nameDisplay.style.display = "inline"
-
-//     editing = false
-//   }
-
-// })
+if(savedName){
+  nameDisplay.textContent = savedName
+  comma.textContent = ","
+}
 
 
-// // Save name when pressing Enter
-// nameInput.addEventListener("keydown", (e) => {
+// Toggle edit mode
+editBtn.addEventListener("click", () => {
 
-//   if(e.key === "Enter"){
+  if(!editing){
 
-//     const name = nameInput.value.trim()
+    nameInput.style.display = "inline"
+    nameDisplay.style.display = "none"
 
-//     if(name !== ""){
-//       nameDisplay.textContent = name
-//       comma.textContent = ","
-//       localStorage.setItem("username", name)
+    nameInput.value = nameDisplay.textContent
+    nameInput.focus()
 
-//     }else{
-//       nameDisplay.textContent = ""
-//       comma.textContent = ""
-//       localStorage.removeItem("username")
-//     }
+    editing = true
 
-//     nameInput.style.display = "none"
-//     nameDisplay.style.display = "inline"
+  }else{
 
-//     editing = false
-//   }
+    nameInput.style.display = "none"
+    nameDisplay.style.display = "inline"
 
-// })
-
-
-    let j = 2;
-
-for (let i = 0; i <= 10; i++) {
-  if (j > 0) {
-    console.log("ok");
+    editing = false
   }
 
-  j = 5 - (j * 2);
-}
+})
+
+
+// Save name when pressing Enter
+nameInput.addEventListener("keydown", (e) => {
+
+  if(e.key === "Enter"){
+
+    const name = nameInput.value.trim()
+
+    if(name !== ""){
+      nameDisplay.textContent = name
+      comma.textContent = ","
+      localStorage.setItem("username", name)
+
+    }else{
+      nameDisplay.textContent = ""
+      comma.textContent = ""
+      localStorage.removeItem("username")
+    }
+
+    nameInput.style.display = "none"
+    nameDisplay.style.display = "inline"
+
+    editing = false
+  }
+
+})
+
+
+//     let j = 2;
+
+// for (let i = 0; i <= 10; i++) {
+//   if (j > 0) {
+//     console.log("ok");
+//   }
+
+//   j = 5 - (j * 2);
+// }
